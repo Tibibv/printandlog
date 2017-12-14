@@ -1,2 +1,2 @@
-import definition
+from .printandlog import*
 

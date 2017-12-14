@@ -23,7 +23,7 @@ def makeUniqueFileName(logFilePath):
   fileFullName = os.path.basename(logFilePath)
   fileName = fileFullName.split(".")[0]
   fileExtension = fileFullName.split(".")[1]
-  if not os.path.exists(dirName):
+  if not (os.path.exists(dirName) and os.path.isdir(dirName)) :
     os.makedirs(dirName)
 
   time = str(datetime.now().strftime('%Y_%m_%d_%H_%M_%S'))
