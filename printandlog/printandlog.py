@@ -37,11 +37,16 @@ def init(logFilePath):
   logFileNewPath = makeUniqueFileName(logFilePath)
   logging.basicConfig(filename=logFileNewPath, level=logging.INFO, format='%(asctime)s %(message)s')
 
-def printAndLog(string, messageType = MessageType.normalMessage):
+def printAndLog(string, list = [], messageType = MessageType.normalMessage):
   messageTypeString = messageString(messageType)
   message = messageTypeString + string
   logging.info(message)
   print(datetime.now().strftime('%H:%M:%S')+ " " + message)
+  for element in list:
+    message = "\t" + str(element)
+    logging.info(message)
+    print(message)
+
 
 def defaultFolder():
   return "D:\Log"
