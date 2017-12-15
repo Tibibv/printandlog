@@ -40,7 +40,7 @@ def init(logFilePath):
   logFileNewPath = makeUniqueFileName(logFilePath)
   logging.basicConfig(filename=logFileNewPath, level=logging.INFO, format='%(asctime)s %(message)s')
 
-def printAndLog(string, list = [], messageType = MessageType.normalMessage):
+def printAndLog(string,  messageType = MessageType.normalMessage, list = []):
   messageTypeString = messageString[messageType]
   message = messageTypeString + string
   logging.info(message)
@@ -58,6 +58,3 @@ def printException():
 
 def defaultFolder():
   return "D:\Log"
-
-
-
