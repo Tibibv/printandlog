@@ -22,6 +22,9 @@ class Test_printandlogtest(TestCase):
     reFileName = re.compile('CompareFolders_\d\d\d\d_\d\d_\d\d_\d\d_\d\d_\d\d\.txt')
     self.assertIsNotNone(reFileName.match(fileName))
 
+  def test_print_exception(self):
+    printandlog.printException()
+
 if __name__ == '__main__':
     unittest.main()
 

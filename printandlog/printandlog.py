@@ -2,6 +2,9 @@ import logging
 import os
 from datetime import datetime
 from enum import Enum
+import traceback
+import sys
+
 
 class MessageType(Enum):
   normalMessage = 0
@@ -46,6 +49,12 @@ def printAndLog(string, list = [], messageType = MessageType.normalMessage):
     message = "\t" + str(element)
     logging.info(message)
     print(message)
+
+def printException():
+  print ('-'*177)
+  traceback.print_exc(file=sys.stdout)
+  print ('-'*177)
+  logging.exception("\n \n" + '-'*77 + "Error" + '-'*77)
 
 def defaultFolder():
   return "D:\Log"
